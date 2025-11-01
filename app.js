@@ -17,13 +17,9 @@ app.get("/users",(request,response)=>{
 
 app.post("/users",(request,response)=>{
     const {name,email}=request.body;
-    userData=[name,email];
+    const userData={name:name,email:email};
     users.push(userData);
-    if(error){
-        return response.status(500).json({
-            "error":error.message
-        })
-    }
+   
     response.status(201).json({
         "message":"create user successfully",
         "name":name,
