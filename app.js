@@ -15,7 +15,7 @@ app.get("/users",(request,response)=>{
     response.status(200).json(users);
 });
 
-app.post("/users",(request,response)=>{
+app.post("/addUsers",(request,response)=>{
     const {name,email}=request.body;
     const userData={name:name,email:email};
     users.push(userData);
