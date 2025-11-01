@@ -15,7 +15,7 @@ app.get("/users",(request,response)=>{
     response.status(200).json(users);
 });
 
-app.post("/addUsers",(request,response)=>{
+app.post("/addUser",(request,response)=>{
     const {name,email}=request.body;
     const userData={name:name,email:email};
     users.push(userData);
@@ -27,6 +27,9 @@ app.post("/addUsers",(request,response)=>{
         "email":email
     })
 });
+
+
+
 
 app.listen(4000,(error)=>{
     if(error) throw error;
