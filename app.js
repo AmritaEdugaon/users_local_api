@@ -51,7 +51,7 @@ app.delete("/deleteUser/:id",(request,response)=>{
 
     if(userIndex!=-1){
         users.splice(userIndex,1);
-        response.status(200).json({massage: "Teacher deleted successfully","teachers":teachers});
+        response.status(200).json({massage: "user deleted successfully"});
     }
     else{
         response.status(404).json({massage:"user not found!"});
