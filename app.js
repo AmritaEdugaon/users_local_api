@@ -28,7 +28,7 @@ app.post("/addUser",(request,response)=>{
 });
 
 app.put("/updateUser/:id",(request,response)=>{
-    const id=parseInt(request.body)
+    const id=parseInt(request.params.id)
     const {name,email}=request.body;
     const userData={id:id,name:name,email:email};
 
@@ -46,7 +46,7 @@ app.put("/updateUser/:id",(request,response)=>{
 })
 
 app.delete("/deleteUser/:id",(request,response)=>{
-    const id=parseInt(request.body);
+    const id=parseInt(request.params.id);
     const userIndex =users.findIndex((e)=>e.id===id);
 
     if(userIndex!=-1){
