@@ -2,6 +2,7 @@ const { error } = require("console");
 const express=require("express");
 const { request } = require("https");
 const { parse } = require("path");
+const PORT=process.env.PORT || 3000;
 const app=express();
  
 app.use(express.json());
@@ -58,7 +59,7 @@ app.delete("/deleteUser/:id",(request,response)=>{
     }
 })
 
-app.listen(4000,(error)=>{
+app.listen(PORT,(error)=>{
     if(error) throw error;
     console.log("server is runing on http://localhost:/4000")
 });
